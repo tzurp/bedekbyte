@@ -220,23 +220,75 @@
             </div>
           </div>
           <div class="featured-visual">
-            <div class="feature-glow"></div>
             <a class="feature-product-link" href="https://openapi-skills.lemonsqueezy.com" target="_blank" rel="noopener noreferrer" aria-label="Get OpenAPI Skills Pro">
               <img class="feature-product-art" src="./assets/openapi-skills-pro-stripe.jpg" alt="OpenAPI Skills Pro, Anything API in One CLI, version 2" width="800" height="200" loading="lazy">
             </a>
-            <div class="feature-console" aria-hidden="true">
-              <div class="console-bar"><span></span><span></span><span></span><b>openapi-skills</b></div>
-              <div class="console-content">
-                <p class="console-comment"># your API, ready to work with</p>
-                <p><span class="console-prompt">$</span> openapi-skills <span class="console-command">explore</span></p>
-                <div class="console-result"><span>✓</span> Schema understood</div>
-                <div class="console-result"><span>✓</span> Operations ready</div>
-                <div class="console-result"><span>✓</span> Tests within reach</div>
-                <div class="console-cursor"><span></span></div>
-              </div>
+          </div>
+          <div class="feature-comparison">
+            <div class="feature-comparison-scroll" role="region" aria-label="CLI feature comparison" tabindex="0">
+              <table class="feature-comparison-table">
+                <caption class="visually-hidden">Feature comparison of the Free CLI and Pro CLI</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Scenario / Workflow</th>
+                    <th scope="col">Free CLI</th>
+                    <th scope="col">Pro CLI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">API Exploration</th>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> OpenAPI 2.0 / 3.0.x &amp; GraphQL</td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> OpenAPI <strong>2.0 / 3.0.x / 3.1</strong> + GraphQL</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Artifact Generation</th>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Basic artifacts (endpoints.json, schemas/)</td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Extended artifacts for <strong>docs</strong>, <strong>diffing</strong>, <strong>analysis</strong></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Schema Validation</th>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Standard validation</td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> <strong>Deep validation</strong> + version comparison</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Live API Requests</th>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> <strong>Postman-alternative CLI request builder</strong> for crafting and sending API calls</td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Same, plus <strong>mock-server integration</strong></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">AI Agent Workflows</th>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Optional LLM skill bundle</td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> <strong>Enhanced Skills</strong> (OpenAPI annotation generation)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Mock Server</th>
+                    <td><span class="comparison-unavailable" role="img" aria-label="Not included">—</span></td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Local mock server from schema artifacts</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">HTML Documentation</th>
+                    <td><span class="comparison-unavailable" role="img" aria-label="Not included">—</span></td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Interactive <strong>HTML API docs</strong></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Schema Diffing</th>
+                    <td><span class="comparison-unavailable" role="img" aria-label="Not included">—</span></td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Operation-level diffing + breaking-change detection</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Code-First Generation</th>
+                    <td><span class="comparison-unavailable" role="img" aria-label="Not included">—</span></td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Bootstrap OpenAPI from annotated source code</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Distribution</th>
+                    <td><code>npm install -g</code></td>
+                    <td><span class="comparison-check" role="img" aria-label="Included">✓</span> Native installers (Windows / macOS / Linux)</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="feature-float feature-float-two"><span class="float-dot"></span> OpenAPI <span class="float-plus">+</span> GraphQL</div>
-            <span class="feature-stamp">CLI<br>TOOLS<br><span>01</span></span>
           </div>
         </div>
       </div>
