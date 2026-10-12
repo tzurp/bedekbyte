@@ -758,7 +758,6 @@ main {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
-  min-height: 478px;
   margin-top: 35px;
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / 10%);
@@ -771,6 +770,7 @@ main {
 .featured-content {
   position: relative;
   z-index: 2;
+  min-width: 0;
   padding: clamp(34px, 5vw, 62px);
 }
 
@@ -886,20 +886,22 @@ main {
 }
 
 .featured-visual {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  overflow: hidden;
   padding: 40px 32px;
 }
 
+.feature-product-link {
+  display: block;
+  width: min(100%, 400px);
+}
+
 .feature-product-art {
-  position: relative;
-  z-index: 1;
+  display: block;
   width: 100%;
   height: auto;
   border: 1px solid rgb(255 255 255 / 15%);
@@ -908,159 +910,88 @@ main {
   box-shadow: 0 14px 34px rgb(0 0 0 / 22%);
 }
 
-.feature-product-link {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: min(100%, 400px);
+.feature-comparison {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: 0 clamp(21px, 5vw, 62px) 48px;
 }
 
-.feature-glow {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border: 1px solid rgb(163 248 62 / 12%);
-  border-radius: 50%;
-  box-shadow: 0 0 0 38px rgb(163 248 62 / 2%), 0 0 0 78px rgb(163 248 62 / 2%);
+.feature-comparison-scroll {
+  overflow-x: auto;
+  border: 1px solid rgb(255 255 255 / 11%);
+  border-radius: 4px;
+  background: rgb(0 0 0 / 12%);
+  scrollbar-color: #626b58 #1e221d;
 }
 
-.feature-console {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 360px);
-  overflow: hidden;
-  border: 1px solid #3b4137;
-  border-radius: 5px;
-  background: #111410;
-  box-shadow: 0 24px 60px rgb(0 0 0 / 35%);
-  transform: rotate(2deg);
+.feature-comparison-scroll:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
 }
 
-.console-bar {
-  display: flex;
-  height: 36px;
-  align-items: center;
-  gap: 5px;
-  padding-inline: 12px;
-  border-bottom: 1px solid rgb(255 255 255 / 9%);
+.feature-comparison-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  color: #d0d4ca;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
 }
 
-.console-bar>span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #63695e;
+.feature-comparison-table th,
+.feature-comparison-table td {
+  padding: 13px 15px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+  vertical-align: top;
 }
 
-.console-bar>span:first-child {
-  background: var(--red);
+.feature-comparison-table thead th {
+  background: rgb(255 255 255 / 4%);
+  color: #f2f4ec;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.console-bar>span:nth-child(2) {
-  background: #f0c255;
+.feature-comparison-table tbody th {
+  width: 24%;
+  color: #f2f4ec;
+  font-weight: 650;
 }
 
-.console-bar b {
-  margin-left: auto;
-  color: #82897c;
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 9px;
-  font-weight: 400;
+.feature-comparison-table td:nth-child(2) {
+  width: 32%;
 }
 
-.console-content {
-  min-height: 195px;
-  padding: 19px;
-  color: #e0e5d9;
+.feature-comparison-table td:nth-child(3) {
+  width: 44%;
+}
+
+.feature-comparison-table strong {
+  color: #f2f4ec;
+  font-weight: 700;
+}
+
+.feature-comparison-table code {
+  color: #f2f4ec;
   font-family: Consolas, "Courier New", monospace;
   font-size: 11px;
 }
 
-.console-content p {
-  margin: 0 0 15px;
+.feature-comparison-table tr:last-child th,
+.feature-comparison-table tr:last-child td {
+  border-bottom: 0;
 }
 
-.console-content .console-comment {
-  margin-bottom: 10px;
-  color: #788171;
-  font-size: 10px;
-}
-
-.console-prompt,
-.console-command {
+.comparison-check {
+  padding-right: 5px;
   color: var(--lime);
-}
-
-.console-result {
-  margin: 8px 0 0 15px;
-  color: #aeb6a6;
-  font-size: 10px;
-}
-
-.console-result span {
-  padding-right: 8px;
-  color: var(--lime);
-}
-
-.console-cursor {
-  height: 12px;
-  margin: 15px 0 0 15px;
-}
-
-.console-cursor span {
-  display: block;
-  width: 5px;
-  height: 12px;
-  background: var(--lime);
-}
-
-.feature-float {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 13px;
-  border: 1px solid #41463d;
-  border-radius: 3px;
-  background: #252a23;
-  box-shadow: 0 12px 22px rgb(0 0 0 / 22%);
-  color: #dfe4d8;
-  font-size: 9px;
-  font-weight: 650;
-  white-space: nowrap;
-}
-
-.feature-float-two {
-  bottom: 17%;
-  left: 6%;
-}
-
-.float-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--lime);
-}
-
-.float-plus {
-  color: #788171;
-}
-
-.feature-stamp {
-  position: absolute;
-  right: 17px;
-  bottom: 12px;
-  color: #747a6e;
-  font-size: 8px;
   font-weight: 750;
-  letter-spacing: 0.12em;
-  line-height: 1.3;
-  text-align: right;
 }
 
-.feature-stamp span {
-  color: var(--lime);
+.comparison-unavailable {
+  color: #858b7e;
 }
 
 .products-section {
@@ -1602,11 +1533,14 @@ main {
   }
 
   .featured-card {
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .feature-float-two {
-    left: 2%;
+  .featured-visual {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 250px;
+    padding: 28px;
   }
 
   .download-proof {
@@ -1782,21 +1716,12 @@ main {
     font-size: 17px;
   }
 
-  .featured-card {
-    grid-template-columns: 1fr;
-  }
-
   .featured-content {
     padding: 38px;
   }
 
-  .featured-visual {
-    min-height: 335px;
-    padding: 24px;
-  }
-
-  .feature-console {
-    width: min(75%, 360px);
+  .feature-comparison {
+    padding: 0 38px 38px;
   }
 
   .products-heading {
@@ -2015,23 +1940,8 @@ main {
     width: 100%;
   }
 
-  .featured-visual {
-    min-height: 293px;
-    padding: 18px;
-  }
-
-  .feature-console {
-    width: 83%;
-  }
-
-  .feature-float {
-    padding: 8px 9px;
-    font-size: 8px;
-  }
-
-  .feature-float-two {
-    bottom: 10%;
-    left: 2%;
+  .feature-comparison {
+    padding: 0 21px 27px;
   }
 
   .products-heading {
